@@ -4,7 +4,7 @@ Categories=GTK;Settings;DesktopSettings;
 Exec=hdisplays
 Icon=@app_id@
 
-Name=Displays
+Name=Hypr-Displays
 GenericName=Displays configuration
 Comment=wlroots displays configuration
 Name[it]=Schermi
