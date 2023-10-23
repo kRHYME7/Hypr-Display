@@ -2,7 +2,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later */
 
 #include "headform.h"
-#include "wdisplays.h"
+#include "hdisplays.h"
 
 typedef struct _WdHeadFormPrivate {
   GtkWidget *enabled;

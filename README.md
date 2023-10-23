@@ -1,8 +1,8 @@
-# wdisplays
+# hdisplays
 
 [![License: GPL 3.0 or later][license-img]][license-spdx]
 
-wdisplays is a graphical application for configuring displays in Wayland
+hdisplays is a graphical application for configuring displays in Wayland
 compositors. It borrows some code from [kanshi]. It should work in any
 compositor that implements the wlr-output-management-unstable-v1 protocol.
 Compositors that are known to support the protocol are [Sway] and [Wayfire].
@@ -10,7 +10,7 @@ The goal of this project is to allow precise adjustment of display settings in
 kiosks, digital signage, and other elaborate multi-monitor setups.
 
 
-![Screenshot](wdisplays.png)
+![Screenshot](hdisplays.png)
 
 # Installation
 

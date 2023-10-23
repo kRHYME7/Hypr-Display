@@ -9,13 +9,13 @@ resources_xml = configure_file(
 
 gnome = import('gnome')
 resources = gnome.compile_resources(
-  'wdisplays-resources', resources_xml,
+  'hdisplays-resources', resources_xml,
   source_dir : '.',
-  c_name : 'wdisplays_resources')
+  c_name : 'hdisplays_resources')
 
 scour = find_program('scour', required: false)
 
-icon = 'wdisplays.svg'
+icon = 'hdisplays.svg'
 icondir = get_option('datadir') / 'icons' / 'hicolor' / 'scalable' / 'apps'
 
 if scour.found()
@@ -44,7 +44,7 @@ else
 endif
 
 install_data(
-    configure_file(input: 'wdisplays.desktop.in',
+    configure_file(input: 'hdisplays.desktop.in',
       output: '@0@.desktop'.format(meson.project_name()),
       configuration: conf),
     install_dir: get_option('datadir') / 'applications')

@@ -1,4 +1,4 @@
-#include "wdisplays.h"
+#include "hdisplays.h"
 #include <ctype.h>
 #include <regex.h>
 #include <stdlib.h>
@@ -25,16 +25,16 @@ char *get_config_file_path() {
     char defaultPath[256]; // 假设文件路径不超过256个字符
     snprintf(defaultPath, sizeof(defaultPath), "%s/.config/kanshi/config", homeDir);
 
-    // 尝试打开并读取 $HOME/.config/wdisplays/config 文件
-    char wdisplaysPath[256];
-    snprintf(wdisplaysPath, sizeof(wdisplaysPath), "%s/.config/wdisplays/config", homeDir);
+    // 尝试打开并读取 $HOME/.config/hdisplays/config 文件
+    char hdisplaysPath[256];
+    snprintf(hdisplaysPath, sizeof(hdisplaysPath), "%s/.config/hdisplays/config", homeDir);
 
-    FILE *wdisplaysFile = fopen(wdisplaysPath, "r");
-    if (wdisplaysFile != NULL) {
+    FILE *hdisplaysFile = fopen(hdisplaysPath, "r");
+    if (hdisplaysFile != NULL) {
         char line[256]; // 假设行的长度不超过256个字符
 
         // 逐行读取文件，查找 "store PATH" 配置项
-        while (fgets(line, sizeof(line), wdisplaysFile) != NULL) {
+        while (fgets(line, sizeof(line), hdisplaysFile) != NULL) {
             if (strstr(line, "store_path") != NULL) {
                 // 找到 "store PATH" 配置项，提取路径
                 char *pathStart = strchr(line, '=');
@@ -43,14 +43,14 @@ char *get_config_file_path() {
                     char *pathEnd = strchr(pathStart, '\n');
                     if (pathEnd != NULL) {
                         *pathEnd = '\0'; // 去除换行符
-                        fclose(wdisplaysFile);
+                        fclose(hdisplaysFile);
                         return strdup(pathStart); // 返回提取的路径
                     }
                 }
             }
         }
 
-        fclose(wdisplaysFile);
+        fclose(hdisplaysFile);
     }
 
     // 如果没有找到 "store PATH" 配置项，则返回默认路径

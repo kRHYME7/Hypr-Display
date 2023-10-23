@@ -4,7 +4,7 @@
 #include <gtk/gtk.h>
 #include <gdk/gdkwayland.h>
 
-#include "wdisplays.h"
+#include "hdisplays.h"
 #include "glviewport.h"
 #include "headform.h"
 
@@ -936,7 +936,7 @@ static void activate(GtkApplication* app, gpointer user_data) {
   state->move_cursor = gdk_cursor_new_from_name(gdk_display, "move");
 
   GtkBuilder *builder = gtk_builder_new_from_resource(
-      WDISPLAYS_RESOURCE_PREFIX "/wdisplays.ui");
+      WDISPLAYS_RESOURCE_PREFIX "/hdisplays.ui");
   GtkWidget *window = GTK_WIDGET(gtk_builder_get_object(builder, "heads_window"));
   state->main_box = GTK_WIDGET(gtk_builder_get_object(builder, "main_box"));
   state->header_stack = GTK_WIDGET(gtk_builder_get_object(builder, "header_stack"));

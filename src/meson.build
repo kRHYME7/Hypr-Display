@@ -12,7 +12,7 @@ epoxy = dependency('epoxy')
 configure_file(input: 'config.h.in', output: 'config.h', configuration: conf)
 
 executable(
-  'wdisplays',
+  'hdisplays',
   [
     'main.c',
     'glviewport.c',

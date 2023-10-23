@@ -9,7 +9,7 @@
 #include <gtk/gtk.h>
 #include <gdk/gdkwayland.h>
 
-#include "wdisplays.h"
+#include "hdisplays.h"
 
 #include "wlr-layer-shell-unstable-v1-client-protocol.h"
 
